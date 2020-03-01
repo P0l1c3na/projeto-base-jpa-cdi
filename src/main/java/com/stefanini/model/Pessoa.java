@@ -20,8 +20,8 @@ public class Pessoa {
     @Column(name = "co_seq_pessoa")
     private Long id;
 
-    @ManyToMany(mappedBy = "pessoa", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
-    private Set<Perfil> perfil;
+//    @ManyToMany(mappedBy = "pessoa",  fetch = FetchType.EAGER)
+//    private Set<Perfil> perfil;
 
     @Column(name = "no_nome")
     private  String nome;

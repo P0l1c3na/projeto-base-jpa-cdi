@@ -80,3 +80,7 @@ target/classes/Treinamento-2.pptx
 .idea/vcs.xml
 
 jpaexample.iml
+
+target/classes/com/stefanini/model/Perfil.class
+
+target/classes/com/stefanini/model/Pessoa.class

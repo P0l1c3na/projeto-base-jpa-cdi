@@ -20,7 +20,7 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "tb_pessoa_perfil",
             joinColumns = {@JoinColumn(name = "co_seq_perfil")},

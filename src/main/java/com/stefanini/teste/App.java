@@ -37,29 +37,32 @@ public class App {
     }
 
     public void executar() {
-        //inserirPessoa();
-        ///inserirEndereco();
-        buscarTodasPessoas();
-        //inserirPerfil();
+        inserirPessoa();
+        inserirEndereco();
+        inserirPerfil();
+        buscarTudo();
     }
 
 
-    public void buscarTodasPessoas() {
+    public void buscarTudo() {
         pessoaService.getList().forEach(x -> System.out.println(x));
 
         perfilService.getList().forEach(x -> System.out.println(x));
+
+        enderecoService.getList().forEach(x -> System.out.println(x));
     }
 
 
     public void inserirPerfil() {
-        Pessoa pessoa = pessoaService.getList().stream().findFirst().get();
 
+        Set<Pessoa> pessoaSet = new HashSet<>(pessoaService.getList());
         Perfil perfil = new Perfil();
 
         perfil.setNomePerfil("Cliente");
         perfil.setDescricaoPerfil("Compra as parada");
         perfil.setDataHoraAlteracao(LocalTime.now());
         perfil.setDataHoraInclusao(LocalTime.now());
+        perfil.setPessoa(pessoaSet);
 
         perfilService.salvar(perfil);
     }
@@ -72,6 +75,15 @@ public class App {
         pessoa.setSituacao(Boolean.TRUE);
 
         pessoaService.salvar(pessoa);
+
+
+        Pessoa pessoa2 = new Pessoa();
+        pessoa2.setEmail("jose@gmail.com");
+        pessoa2.setDataNascimento(LocalDate.of(1990, 1, 1));
+        pessoa2.setNome("José");
+        pessoa2.setSituacao(Boolean.TRUE);
+
+        pessoaService.salvar(pessoa2);
     }
 
     public void inserirEndereco() {
@@ -81,6 +93,7 @@ public class App {
         endereco.setPessoa(pessoa);
         endereco.setBairro("Jd Maria Inês");
         endereco.setCep("74214000");
+        endereco.setUf("GO");
         endereco.setCidade("Ap. Goiânia");
         endereco.setComplemento("Num tem");
         endereco.setLogradouro("Condomínio Maria Ines IV");
