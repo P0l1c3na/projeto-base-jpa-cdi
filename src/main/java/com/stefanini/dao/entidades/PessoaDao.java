@@ -1,4 +1,4 @@
-package com.stefanini.dao.pessoa;
+package com.stefanini.dao.entidades;
 
 import com.stefanini.dao.abstracao.GenericDao;
 import com.stefanini.model.Pessoa;

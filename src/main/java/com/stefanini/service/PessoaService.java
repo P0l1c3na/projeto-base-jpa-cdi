@@ -1,6 +1,6 @@
 package com.stefanini.service;
 
-import com.stefanini.dao.pessoa.PessoaDao;
+import com.stefanini.dao.entidades.PessoaDao;
 import com.stefanini.model.Pessoa;
 import com.stefanini.util.IGenericService;
 
@@ -11,7 +11,7 @@ import java.util.List;
 public class PessoaService implements IGenericService<Pessoa, Long> {
 
     @Inject
-    PessoaDao pessoaDao;
+    private PessoaDao pessoaDao;
     /**
      * Salvar uma entidade
      *
@@ -29,12 +29,12 @@ public class PessoaService implements IGenericService<Pessoa, Long> {
      */
     @Override
     public Pessoa atualizar(@Valid Pessoa entity) {
-        return null;
+        return pessoaDao.atualizar(entity);
     }
 
     @Override
     public void remover(Long id) {
-
+        pessoaDao.remover(id);
     }
 
     @Override
@@ -44,6 +44,6 @@ public class PessoaService implements IGenericService<Pessoa, Long> {
 
     @Override
     public Pessoa encontrar(Long id) {
-        return null;
+        return pessoaDao.encontrar(id);
     }
 }
