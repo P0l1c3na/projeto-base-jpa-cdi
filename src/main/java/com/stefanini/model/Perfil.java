@@ -20,6 +20,14 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @JoinTable(
+            name = "tb_pessoa_perfil",
+            joinColumns = {@JoinColumn(name = "co_seq_perfil")},
+            inverseJoinColumns = {@JoinColumn(name = "co_seq_pessoa")}
+    )
+    private Set<Pessoa> pessoa;
+
     @NotNull
     @Column(name = "no_perfil")
     private String nomePerfil;

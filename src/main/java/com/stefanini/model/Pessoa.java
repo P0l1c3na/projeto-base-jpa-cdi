@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 
 @Entity
@@ -18,6 +19,9 @@ public class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "co_seq_pessoa")
     private Long id;
+
+    @ManyToMany(mappedBy = "pessoa", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private Set<Perfil> perfil;
 
     @Column(name = "no_nome")
     private  String nome;

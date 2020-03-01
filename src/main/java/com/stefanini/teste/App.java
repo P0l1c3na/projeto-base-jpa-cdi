@@ -40,7 +40,7 @@ public class App {
         //inserirPessoa();
         ///inserirEndereco();
         buscarTodasPessoas();
-        inserirPerfil();
+        //inserirPerfil();
     }
 
 
