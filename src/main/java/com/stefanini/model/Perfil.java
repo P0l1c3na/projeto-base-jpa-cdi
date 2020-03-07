@@ -1,8 +1,6 @@
 package com.stefanini.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -10,34 +8,40 @@ import java.time.LocalTime;
 import java.util.Set;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@ToString
+@NoArgsConstructor @AllArgsConstructor
 @Table(name = "TB_PERFIL")
 public class Perfil {
     @Id
-    @Column(name = "co_seq_perfil")
+    @Getter
+    @Column(name = "CO_SEQ_PERFIL")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Getter @Setter
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-            name = "tb_pessoa_perfil",
-            joinColumns = {@JoinColumn(name = "co_seq_perfil")},
-            inverseJoinColumns = {@JoinColumn(name = "co_seq_pessoa")}
+            name = "TB_PESSOA_PERFIL",
+            joinColumns = {@JoinColumn(name = "CO_SEQ_PERFIL")},
+            inverseJoinColumns = {@JoinColumn(name = "CO_SEQ_PESSOA")}
     )
     private Set<Pessoa> pessoa;
 
+
     @NotNull
-    @Column(name = "no_perfil")
+    @Getter @Setter
+    @Column(name = "NO_PERFIL")
     private String nomePerfil;
 
-    @Column(name = "ds_perfil")
+    @Getter @Setter
+    @Column(name = "DS_PERFIL")
     private String descricaoPerfil;
 
-    @Column(name = "dt_hora_inclusao")
+    @Getter @Setter
+    @Column(name = "DT_HORA_INCLUSAO")
     private LocalTime dataHoraInclusao;
 
-    @Column(name = "dt_hora_alteracao")
+    @Getter @Setter
+    @Column(name = "DT_HORA_ALTERACAO")
     private LocalTime dataHoraAlteracao;
 }

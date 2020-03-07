@@ -1,8 +1,6 @@
 package com.stefanini.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,28 +8,29 @@ import java.util.Set;
 
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@ToString
+@NoArgsConstructor @AllArgsConstructor
 @Table(name = "TB_PESSOA")
 public class Pessoa {
     @Id
+    @Getter
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "co_seq_pessoa")
+    @Column(name = "CO_SEQ_PESSOA")
     private Long id;
 
-//    @ManyToMany(mappedBy = "pessoa",  fetch = FetchType.EAGER)
-//    private Set<Perfil> perfil;
-
-    @Column(name = "no_nome")
+    @Getter @Setter
+    @Column(name = "NO_NOME")
     private  String nome;
 
-    @Column(name = "ds_email")
+    @Getter @Setter
+    @Column(name = "DS_EMAIL")
     private  String email;
 
-    @Column(name = "dt_nascimento")
+    @Getter @Setter
+    @Column(name = "DT_NASCIMENTO")
     private LocalDate dataNascimento;
 
-    @Column(name = "st_pessoa")
+    @Getter @Setter
+    @Column(name = "ST_PESSOA")
     private boolean situacao;
 }

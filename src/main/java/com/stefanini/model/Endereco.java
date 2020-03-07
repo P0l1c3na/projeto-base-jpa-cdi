@@ -1,44 +1,49 @@
 package com.stefanini.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@ToString
+@NoArgsConstructor @AllArgsConstructor
 @Table(name = "TB_ENDERECO")
 public class Endereco {
     @Id
-    @Column(name = "co_seq_endereco")
+    @Getter
+    @Column(name = "CO_SEQ_ENDERECO")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @OneToOne
     @NotNull
+    @Getter @Setter
     private Pessoa pessoa;
 
-    @Column(name = "ds_logradouro", length = 150)
+    @Getter @Setter
+    @Column(name = "DS_LOGRADOURO", length = 150)
     private String logradouro;
 
-    @Column(name = "ds_complemento", length = 150)
+    @Getter @Setter
+    @Column(name = "DS_COMPLEMENTO", length = 150)
     private String complemento;
 
-    @Column(name = "ds_bairro", length = 250)
+    @Getter @Setter
+    @Column(name = "DS_BAIRRO", length = 250)
     private String bairro;
 
-    @Column(name = "ds_cidade")
+    @Getter @Setter
+    @Column(name = "DS_CIDADE")
     private String cidade;
 
-    @Column(name = "ds_uf")
+    @Getter @Setter
+    @Column(name = "DS_UF")
     private String uf;
 
-    @Column(name = "ds_cep", length = 8)
+    @Getter @Setter
+    @Column(name = "DS_CEP", length = 8)
     private String cep;
 
 
