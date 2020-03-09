@@ -11,10 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.ParameterExpression;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -38,7 +35,7 @@ public class PessoaTest {
 
     @Before
     public void setUp() {
-        runScrip();
+        //runScrip();
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         this.validator = validatorFactory.getValidator();
         StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure()
@@ -187,6 +184,48 @@ public class PessoaTest {
         return session.createQuery(q).getSingleResult();
     }
 
+    private Stream<Endereco> buscaPessoasEnderecoCriteria(Session session, String name) {
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+
+        //Buscando pessoa
+        CriteriaQuery<Pessoa> q = cb.createQuery(Pessoa.class);
+        Root<Pessoa> entityRoot = q.from(Pessoa.class);
+        q.select(entityRoot);
+        ParameterExpression<String> p = cb.parameter(String.class);
+        q.where(cb.equal(entityRoot.get("nome"), name));
+
+        Pessoa pessoa = session.createQuery(q).getSingleResult();
+
+        //Buscando o endereco da pessoa
+        CriteriaQuery<Endereco> endCQ = cb.createQuery(Endereco.class);
+        Root<Endereco> enderecoRoot = endCQ.from(Endereco.class);
+        endCQ.select(enderecoRoot);
+        ParameterExpression<Long> pes = cb.parameter(Long.class);
+        endCQ.where(cb.equal(enderecoRoot.get("idPessoa"), pessoa.getId()));
+
+        return session.createQuery(endCQ).getResultStream();
+    }
+
+    private Stream<Endereco> buscaEnderecoPorUF(Session session, String uf){
+
+        CriteriaBuilder cb = session.getCriteriaBuilder();
+
+        //Buscando endereco
+        CriteriaQuery<Endereco> q = cb.createQuery(Endereco.class);
+        Root<Endereco> enderecoRoot = q.from(Endereco.class);
+        q.select(enderecoRoot);
+        ParameterExpression<String> p = cb.parameter(String.class);
+        q.where(cb.equal(enderecoRoot.get("uf"), uf));
+
+        return  session.createQuery(q).getResultStream();
+    }
+
+
+//    public Stream<Pessoa> retornaPessoaComPerfil(Session session, Perfil perfil){
+//
+//    }
+
+
 
     /**
      * EFETUAR A  COM QUERY
@@ -225,6 +264,26 @@ public class PessoaTest {
         }
     }
 
+/**
+ * Busca o endereco com base no nome da pessoa
+ * */
+    @Test
+    public void buscandoEnderecoDaPessoa(){
+        try (Session session = factoryJpa.openSession()) {
+          Stream<Endereco> enderecoStream =  buscaPessoasEnderecoCriteria(session, nome);
+
+          enderecoStream.forEach(System.out::println);
+        }
+    }
+
+    @Test
+    public void buscaEnderecoPorUf(){
+        try (Session session = factoryJpa.openSession()) {
+            Stream<Endereco> enderecoStream = buscaEnderecoPorUF(session, "DF");
+            enderecoStream.forEach(System.out::println);
+        }
+    }
+
     /**
      * EFETUAR A  COM NameQuery
      */
@@ -235,6 +294,7 @@ public class PessoaTest {
             System.out.println("Novo: " + pessoa1);
         }
     }
+
 
     /**
      * EFETUAR A  COM NameQuery

@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="8" failures="0" name="com.stefanini.model.PessoaTest" time="7.703" errors="4" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="12.0.1+12"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-12.0.1\bin"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Raphael Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=";"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Raphael Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="java.runtime.version" value="12.0.1+12"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\RAPHAE~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-12.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Raphael Policena\AppData\Local\Microsoft\WindowsApps;D:\Arquivos de Programas\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Users\Raphael Policena\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Raphael Policena\AppData\Roaming\npm;."/>
+    <property name="maven.conf" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\maven\lib\maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="56.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="idea.version2019.3.3" value="true"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\Raphael Policena"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="12"/>
+    <property name="user.name" value="Raphael Policena"/>
+    <property name="java.class.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="12"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.3.3 install"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-12.0.1"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="12.0.1"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.version.date" value="2019-04-16"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.stefanini.model.PessoaTest" name="naoDeveAceitarSobrenomeCurto" time="3.065"/>
+  <testcase classname="com.stefanini.model.PessoaTest" name="findPessoaUsandoNameQuery" time="0.942">
+    <error message="No entity found for query" type="javax.persistence.NoResultException">javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1580)
+	at com.stefanini.model.PessoaTest.findPessoaUsandoNameQuery(PessoaTest.java:131)
+	at com.stefanini.model.PessoaTest.findPessoaUsandoNameQuery(PessoaTest.java:221)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>Carregado o SCRIPT
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       drop constraint if exists FK7w2dwmhqodaigqe9y59aos0uj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKoycciqf87ahe60y9mohgufvkj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKmsqywibrdej57cvsnq8hsebcc
+Hibernate: 
+    
+    drop table if exists tb_endereco cascade
+Hibernate: 
+    
+    drop table if exists TB_PERFIL cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA_PERFIL cascade
+Hibernate: 
+    
+    create table tb_endereco (
+       CO_SEQ_ENDERECO  bigserial not null,
+        DS_BAIRRO varchar(255),
+        DS_CEP varchar(255),
+        DS_COMPLEMENTO varchar(255),
+        CO_SEQ_PESSOA int8,
+        DS_CIDADE varchar(255),
+        DS_LOGRADOURO varchar(255),
+        CO_UF varchar(255),
+        primary key (CO_SEQ_ENDERECO)
+    )
+Hibernate: 
+    
+    create table TB_PERFIL (
+       co_seq_perfil  bigserial not null,
+        dt_hora_alteracao timestamp,
+        dt_hora_inclusao timestamp not null,
+        ds_perfil varchar(255) not null,
+        no_perfil varchar(255) not null,
+        primary key (co_seq_perfil)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA (
+       CO_SEQ_PESSOA  bigserial not null,
+        DT_NASCIMENTO date not null,
+        DS_EMAIL varchar(255) not null,
+        NO_NOME varchar(255) not null,
+        ST_PESSOA boolean not null,
+        primary key (CO_SEQ_PESSOA)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA_PERFIL (
+       CO_SEQ_PESSOA int8 not null,
+        CO_SEQ_PERFIL int8 not null,
+        primary key (CO_SEQ_PESSOA, CO_SEQ_PERFIL)
+    )
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       add constraint FK7w2dwmhqodaigqe9y59aos0uj 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKoycciqf87ahe60y9mohgufvkj 
+       foreign key (CO_SEQ_PERFIL) 
+       references TB_PERFIL
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKmsqywibrdej57cvsnq8hsebcc 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    select
+        pessoa0_.CO_SEQ_PESSOA as co_seq_p1_2_0_,
+        perfil2_.co_seq_perfil as co_seq_p1_1_1_,
+        enderecos3_.CO_SEQ_ENDERECO as co_seq_e1_0_2_,
+        pessoa0_.DT_NASCIMENTO as dt_nasci2_2_0_,
+        pessoa0_.DS_EMAIL as ds_email3_2_0_,
+        pessoa0_.NO_NOME as no_nome4_2_0_,
+        pessoa0_.ST_PESSOA as st_pesso5_2_0_,
+        perfil2_.dt_hora_alteracao as dt_hora_2_1_1_,
+        perfil2_.dt_hora_inclusao as dt_hora_3_1_1_,
+        perfil2_.ds_perfil as ds_perfi4_1_1_,
+        perfil2_.no_perfil as no_perfi5_1_1_,
+        perfils1_.CO_SEQ_PESSOA as co_seq_p1_3_0__,
+        perfils1_.CO_SEQ_PERFIL as co_seq_p2_3_0__,
+        enderecos3_.DS_BAIRRO as ds_bairr2_0_2_,
+        enderecos3_.DS_CEP as ds_cep3_0_2_,
+        enderecos3_.DS_COMPLEMENTO as ds_compl4_0_2_,
+        enderecos3_.CO_SEQ_PESSOA as co_seq_p5_0_2_,
+        enderecos3_.DS_CIDADE as ds_cidad6_0_2_,
+        enderecos3_.DS_LOGRADOURO as ds_logra7_0_2_,
+        enderecos3_.CO_UF as co_uf8_0_2_,
+        enderecos3_.CO_SEQ_PESSOA as co_seq_p5_0_1__,
+        enderecos3_.CO_SEQ_ENDERECO as co_seq_e1_0_1__ 
+    from
+        TB_PESSOA pessoa0_ 
+    inner join
+        TB_PESSOA_PERFIL perfils1_ 
+            on pessoa0_.CO_SEQ_PESSOA=perfils1_.CO_SEQ_PESSOA 
+    inner join
+        TB_PERFIL perfil2_ 
+            on perfils1_.CO_SEQ_PERFIL=perfil2_.co_seq_perfil 
+    inner join
+        tb_endereco enderecos3_ 
+            on pessoa0_.CO_SEQ_PESSOA=enderecos3_.CO_SEQ_PESSOA 
+    where
+        pessoa0_.NO_NOME=?
+</system-out>
+    <system-err>java.io.FileNotFoundException: C:\Users\Raphael%20Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi\target\classes\db.sql (O sistema n�o pode encontrar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:155)
+	at java.base/java.io.FileReader.&lt;init&gt;(FileReader.java:75)
+	at com.stefanini.model.PessoaTest.runScrip(PessoaTest.java:65)
+	at com.stefanini.model.PessoaTest.setUp(PessoaTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+mar 07, 2020 11:07:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+mar 07, 2020 11:07:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/treinamento]
+mar 07, 2020 11:07:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=postgres}
+mar 07, 2020 11:07:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+mar 07, 2020 11:07:05 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+mar 07, 2020 11:07:05 AM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+mar 07, 2020 11:07:06 AM org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator resolveBeanContainer
+INFO: HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+mar 07, 2020 11:07:06 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@414b2df5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:06 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@9e30f9a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:06 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+</system-err>
+  </testcase>
+  <testcase classname="com.stefanini.model.PessoaTest" name="findCountPessoa" time="0.662"/>
+  <testcase classname="com.stefanini.model.PessoaTest" name="findPessoaUsandoNativeQuery" time="0.617">
+    <error message="No entity found for query" type="javax.persistence.NoResultException">javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1580)
+	at com.stefanini.model.PessoaTest.findPessoaUsandoNativeQuery(PessoaTest.java:148)
+	at com.stefanini.model.PessoaTest.findPessoaUsandoNativeQuery(PessoaTest.java:234)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>Carregado o SCRIPT
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       drop constraint if exists FK7w2dwmhqodaigqe9y59aos0uj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKoycciqf87ahe60y9mohgufvkj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKmsqywibrdej57cvsnq8hsebcc
+Hibernate: 
+    
+    drop table if exists tb_endereco cascade
+Hibernate: 
+    
+    drop table if exists TB_PERFIL cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA_PERFIL cascade
+Hibernate: 
+    
+    create table tb_endereco (
+       CO_SEQ_ENDERECO  bigserial not null,
+        DS_BAIRRO varchar(255),
+        DS_CEP varchar(255),
+        DS_COMPLEMENTO varchar(255),
+        CO_SEQ_PESSOA int8,
+        DS_CIDADE varchar(255),
+        DS_LOGRADOURO varchar(255),
+        CO_UF varchar(255),
+        primary key (CO_SEQ_ENDERECO)
+    )
+Hibernate: 
+    
+    create table TB_PERFIL (
+       co_seq_perfil  bigserial not null,
+        dt_hora_alteracao timestamp,
+        dt_hora_inclusao timestamp not null,
+        ds_perfil varchar(255) not null,
+        no_perfil varchar(255) not null,
+        primary key (co_seq_perfil)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA (
+       CO_SEQ_PESSOA  bigserial not null,
+        DT_NASCIMENTO date not null,
+        DS_EMAIL varchar(255) not null,
+        NO_NOME varchar(255) not null,
+        ST_PESSOA boolean not null,
+        primary key (CO_SEQ_PESSOA)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA_PERFIL (
+       CO_SEQ_PESSOA int8 not null,
+        CO_SEQ_PERFIL int8 not null,
+        primary key (CO_SEQ_PESSOA, CO_SEQ_PERFIL)
+    )
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       add constraint FK7w2dwmhqodaigqe9y59aos0uj 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKoycciqf87ahe60y9mohgufvkj 
+       foreign key (CO_SEQ_PERFIL) 
+       references TB_PERFIL
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKmsqywibrdej57cvsnq8hsebcc 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    select
+        * 
+    from
+        TB_PESSOA 
+    where
+        NO_NOME =?
+</system-out>
+    <system-err>java.io.FileNotFoundException: C:\Users\Raphael%20Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi\target\classes\db.sql (O sistema n�o pode encontrar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:155)
+	at java.base/java.io.FileReader.&lt;init&gt;(FileReader.java:75)
+	at com.stefanini.model.PessoaTest.runScrip(PessoaTest.java:65)
+	at com.stefanini.model.PessoaTest.setUp(PessoaTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+mar 07, 2020 11:07:07 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+mar 07, 2020 11:07:07 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/treinamento]
+mar 07, 2020 11:07:07 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=postgres}
+mar 07, 2020 11:07:07 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+mar 07, 2020 11:07:07 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+mar 07, 2020 11:07:07 AM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+mar 07, 2020 11:07:07 AM org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator resolveBeanContainer
+INFO: HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+mar 07, 2020 11:07:07 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1edf71d9] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:07 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@52d9d817] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:07 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+</system-err>
+  </testcase>
+  <testcase classname="com.stefanini.model.PessoaTest" name="PessoaComQuery" time="0.625"/>
+  <testcase classname="com.stefanini.model.PessoaTest" name="findPessoaCriteria" time="0.624">
+    <error message="No entity found for query" type="javax.persistence.NoResultException">javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1580)
+	at org.hibernate.query.criteria.internal.compile.CriteriaQueryTypeQueryAdapter.getSingleResult(CriteriaQueryTypeQueryAdapter.java:111)
+	at com.stefanini.model.PessoaTest.findPessoaCriteria(PessoaTest.java:168)
+	at com.stefanini.model.PessoaTest.findPessoaCriteria(PessoaTest.java:245)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>Carregado o SCRIPT
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       drop constraint if exists FK7w2dwmhqodaigqe9y59aos0uj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKoycciqf87ahe60y9mohgufvkj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKmsqywibrdej57cvsnq8hsebcc
+Hibernate: 
+    
+    drop table if exists tb_endereco cascade
+Hibernate: 
+    
+    drop table if exists TB_PERFIL cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA_PERFIL cascade
+Hibernate: 
+    
+    create table tb_endereco (
+       CO_SEQ_ENDERECO  bigserial not null,
+        DS_BAIRRO varchar(255),
+        DS_CEP varchar(255),
+        DS_COMPLEMENTO varchar(255),
+        CO_SEQ_PESSOA int8,
+        DS_CIDADE varchar(255),
+        DS_LOGRADOURO varchar(255),
+        CO_UF varchar(255),
+        primary key (CO_SEQ_ENDERECO)
+    )
+Hibernate: 
+    
+    create table TB_PERFIL (
+       co_seq_perfil  bigserial not null,
+        dt_hora_alteracao timestamp,
+        dt_hora_inclusao timestamp not null,
+        ds_perfil varchar(255) not null,
+        no_perfil varchar(255) not null,
+        primary key (co_seq_perfil)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA (
+       CO_SEQ_PESSOA  bigserial not null,
+        DT_NASCIMENTO date not null,
+        DS_EMAIL varchar(255) not null,
+        NO_NOME varchar(255) not null,
+        ST_PESSOA boolean not null,
+        primary key (CO_SEQ_PESSOA)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA_PERFIL (
+       CO_SEQ_PESSOA int8 not null,
+        CO_SEQ_PERFIL int8 not null,
+        primary key (CO_SEQ_PESSOA, CO_SEQ_PERFIL)
+    )
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       add constraint FK7w2dwmhqodaigqe9y59aos0uj 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKoycciqf87ahe60y9mohgufvkj 
+       foreign key (CO_SEQ_PERFIL) 
+       references TB_PERFIL
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKmsqywibrdej57cvsnq8hsebcc 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    select
+        pessoa0_.CO_SEQ_PESSOA as co_seq_p1_2_,
+        pessoa0_.DT_NASCIMENTO as dt_nasci2_2_,
+        pessoa0_.DS_EMAIL as ds_email3_2_,
+        pessoa0_.NO_NOME as no_nome4_2_,
+        pessoa0_.ST_PESSOA as st_pesso5_2_ 
+    from
+        TB_PESSOA pessoa0_ 
+    where
+        pessoa0_.NO_NOME=?
+</system-out>
+    <system-err>java.io.FileNotFoundException: C:\Users\Raphael%20Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi\target\classes\db.sql (O sistema n�o pode encontrar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:155)
+	at java.base/java.io.FileReader.&lt;init&gt;(FileReader.java:75)
+	at com.stefanini.model.PessoaTest.runScrip(PessoaTest.java:65)
+	at com.stefanini.model.PessoaTest.setUp(PessoaTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+mar 07, 2020 11:07:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+mar 07, 2020 11:07:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/treinamento]
+mar 07, 2020 11:07:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=postgres}
+mar 07, 2020 11:07:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+mar 07, 2020 11:07:08 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+mar 07, 2020 11:07:08 AM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+mar 07, 2020 11:07:08 AM org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator resolveBeanContainer
+INFO: HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+mar 07, 2020 11:07:08 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@eb91027] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:09 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@459d2ee6] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:09 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+</system-err>
+  </testcase>
+  <testcase classname="com.stefanini.model.PessoaTest" name="findPessoaStream" time="0.645"/>
+  <testcase classname="com.stefanini.model.PessoaTest" name="PessoaComTypedQuery" time="0.523">
+    <error message="No entity found for query" type="javax.persistence.NoResultException">javax.persistence.NoResultException: No entity found for query
+	at org.hibernate.query.internal.AbstractProducedQuery.getSingleResult(AbstractProducedQuery.java:1580)
+	at com.stefanini.model.PessoaTest.findPessoaNovo(PessoaTest.java:100)
+	at com.stefanini.model.PessoaTest.PessoaComTypedQuery(PessoaTest.java:210)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>Carregado o SCRIPT
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       drop constraint if exists FK7w2dwmhqodaigqe9y59aos0uj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKoycciqf87ahe60y9mohgufvkj
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       drop constraint if exists FKmsqywibrdej57cvsnq8hsebcc
+Hibernate: 
+    
+    drop table if exists tb_endereco cascade
+Hibernate: 
+    
+    drop table if exists TB_PERFIL cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA cascade
+Hibernate: 
+    
+    drop table if exists TB_PESSOA_PERFIL cascade
+Hibernate: 
+    
+    create table tb_endereco (
+       CO_SEQ_ENDERECO  bigserial not null,
+        DS_BAIRRO varchar(255),
+        DS_CEP varchar(255),
+        DS_COMPLEMENTO varchar(255),
+        CO_SEQ_PESSOA int8,
+        DS_CIDADE varchar(255),
+        DS_LOGRADOURO varchar(255),
+        CO_UF varchar(255),
+        primary key (CO_SEQ_ENDERECO)
+    )
+Hibernate: 
+    
+    create table TB_PERFIL (
+       co_seq_perfil  bigserial not null,
+        dt_hora_alteracao timestamp,
+        dt_hora_inclusao timestamp not null,
+        ds_perfil varchar(255) not null,
+        no_perfil varchar(255) not null,
+        primary key (co_seq_perfil)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA (
+       CO_SEQ_PESSOA  bigserial not null,
+        DT_NASCIMENTO date not null,
+        DS_EMAIL varchar(255) not null,
+        NO_NOME varchar(255) not null,
+        ST_PESSOA boolean not null,
+        primary key (CO_SEQ_PESSOA)
+    )
+Hibernate: 
+    
+    create table TB_PESSOA_PERFIL (
+       CO_SEQ_PESSOA int8 not null,
+        CO_SEQ_PERFIL int8 not null,
+        primary key (CO_SEQ_PESSOA, CO_SEQ_PERFIL)
+    )
+Hibernate: 
+    
+    alter table if exists tb_endereco 
+       add constraint FK7w2dwmhqodaigqe9y59aos0uj 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKoycciqf87ahe60y9mohgufvkj 
+       foreign key (CO_SEQ_PERFIL) 
+       references TB_PERFIL
+Hibernate: 
+    
+    alter table if exists TB_PESSOA_PERFIL 
+       add constraint FKmsqywibrdej57cvsnq8hsebcc 
+       foreign key (CO_SEQ_PESSOA) 
+       references TB_PESSOA
+Hibernate: 
+    select
+        pessoa0_.CO_SEQ_PESSOA as co_seq_p1_2_,
+        pessoa0_.DT_NASCIMENTO as dt_nasci2_2_,
+        pessoa0_.DS_EMAIL as ds_email3_2_,
+        pessoa0_.NO_NOME as no_nome4_2_,
+        pessoa0_.ST_PESSOA as st_pesso5_2_ 
+    from
+        TB_PESSOA pessoa0_ 
+    where
+        pessoa0_.NO_NOME=?
+</system-out>
+    <system-err>java.io.FileNotFoundException: C:\Users\Raphael%20Policena\Documents\Treinamento-Stefanini\JpaBase-2\projeto-base-jpa-cdi\target\classes\db.sql (O sistema n�o pode encontrar o caminho especificado)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:213)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:155)
+	at java.base/java.io.FileReader.&lt;init&gt;(FileReader.java:75)
+	at com.stefanini.model.PessoaTest.runScrip(PessoaTest.java:65)
+	at com.stefanini.model.PessoaTest.setUp(PessoaTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.RunBefores.invokeMethod(RunBefores.java:33)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+mar 07, 2020 11:07:09 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+mar 07, 2020 11:07:09 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [org.postgresql.Driver] at URL [jdbc:postgresql://localhost:5432/treinamento]
+mar 07, 2020 11:07:09 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {password=****, user=postgres}
+mar 07, 2020 11:07:09 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001003: Autocommit mode: false
+mar 07, 2020 11:07:09 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections &lt;init&gt;
+INFO: HHH000115: Hibernate connection pool size: 20 (min=1)
+mar 07, 2020 11:07:09 AM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+mar 07, 2020 11:07:10 AM org.hibernate.resource.beans.spi.ManagedBeanRegistryInitiator resolveBeanContainer
+INFO: HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+mar 07, 2020 11:07:10 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@351e86b2] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:10 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a8b42a3] for (non-JTA) DDL execution was not in auto-commit mode; the Connection &apos;local transaction&apos; will be committed and the Connection will be set into auto-commit mode.
+mar 07, 2020 11:07:10 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+</system-err>
+  </testcase>
+</testsuite>

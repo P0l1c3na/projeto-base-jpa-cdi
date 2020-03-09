@@ -1,0 +1,12 @@
+com\stefanini\dao\abstracao\GenericDao.class
+com\stefanini\servico\EnderecoServico.class
+com\stefanini\servico\PessoaServico.class
+com\stefanini\model\Endereco.class
+com\stefanini\model\PessoaPerfil.class
+com\stefanini\dao\util\JPAUtil.class
+com\stefanini\teste\App.class
+com\stefanini\dao\EnderecoDao.class
+com\stefanini\model\Pessoa.class
+com\stefanini\model\Perfil.class
+com\stefanini\dao\PessoaDao.class
+com\stefanini\util\IGenericService.class

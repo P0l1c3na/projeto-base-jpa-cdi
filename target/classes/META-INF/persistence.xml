@@ -15,7 +15,7 @@
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/treinamento" />
             <property name="hibernate.connection.username" value="postgres" />
             <property name="hibernate.connection.password" value="123456" />
-<!--            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>-->
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
 
              <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>

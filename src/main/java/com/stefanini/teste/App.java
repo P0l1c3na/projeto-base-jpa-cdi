@@ -1,11 +1,15 @@
 package com.stefanini.teste;
 
+import com.stefanini.model.Endereco;
+import com.stefanini.model.Perfil;
 import com.stefanini.model.Pessoa;
 import com.stefanini.servico.PessoaServico;
 
 import javax.enterprise.inject.se.SeContainer;
 import javax.enterprise.inject.se.SeContainerInitializer;
 import javax.inject.Inject;
+import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Optional;
 
 public class App {
@@ -56,9 +60,20 @@ public class App {
 
 	public void salvar() {
 
-//		Pessoa pessoa = new Pessoa("JOAO", LocalDate.of(1995, 8, 24));
-//		pessoa.setEmail("joaom.dev@hotmail.com");
-//		servico.salvar(pessoa);
+		Pessoa pessoa = new Pessoa();
+		pessoa.setNome("Raphael");
+		pessoa.setDataNascimento(LocalDate.of(1997, 8, 23));
+		pessoa.setEmail("phaelpolicena@gmail.com");
+		pessoa.setSituacao(true);
+		pessoa.setPerfils(new HashSet<Perfil>());
+		pessoa.setEnderecos(new HashSet<Endereco>());
+		servico.salvar(pessoa);
+
+		Endereco endereco = new Endereco();
+		endereco.setUf("GO");
+		endereco.setLogradouro("Ap");
+		endereco.setCep("74280530");
+		endereco.setBairro("Maria Ines");
 
 	}
 
